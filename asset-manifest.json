@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dishes-app/static/css/main.9071bff3.css",
+    "main.js": "/dishes-app/static/js/main.97349c6b.js",
+    "static/js/787.72642adb.chunk.js": "/dishes-app/static/js/787.72642adb.chunk.js",
+    "index.html": "/dishes-app/index.html",
+    "main.9071bff3.css.map": "/dishes-app/static/css/main.9071bff3.css.map",
+    "main.97349c6b.js.map": "/dishes-app/static/js/main.97349c6b.js.map",
+    "787.72642adb.chunk.js.map": "/dishes-app/static/js/787.72642adb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9071bff3.css",
+    "static/js/main.97349c6b.js"
+  ]
+}
