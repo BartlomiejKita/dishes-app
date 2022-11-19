@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/dishes-app/static/css/main.9071bff3.css",
-    "main.js": "/dishes-app/static/js/main.97349c6b.js",
+    "main.css": "/dishes-app/static/css/main.aa26ea79.css",
+    "main.js": "/dishes-app/static/js/main.34628741.js",
     "static/js/787.72642adb.chunk.js": "/dishes-app/static/js/787.72642adb.chunk.js",
+    "static/media/background_picture.jpg": "/dishes-app/static/media/background_picture.6ce9cf48b1c9a2204f69.jpg",
     "index.html": "/dishes-app/index.html",
-    "main.9071bff3.css.map": "/dishes-app/static/css/main.9071bff3.css.map",
-    "main.97349c6b.js.map": "/dishes-app/static/js/main.97349c6b.js.map",
+    "main.aa26ea79.css.map": "/dishes-app/static/css/main.aa26ea79.css.map",
+    "main.34628741.js.map": "/dishes-app/static/js/main.34628741.js.map",
     "787.72642adb.chunk.js.map": "/dishes-app/static/js/787.72642adb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9071bff3.css",
-    "static/js/main.97349c6b.js"
+    "static/css/main.aa26ea79.css",
+    "static/js/main.34628741.js"
   ]
 }
