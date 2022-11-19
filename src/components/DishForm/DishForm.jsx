@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Field, reduxForm, formValueSelector } from "redux-form";
+import { reduxForm, formValueSelector } from "redux-form";
 import { postDish } from "../../services/api";
 import FormButtons from "../Buttons/Buttons";
+import { Inputbox, Input, Span } from "./DishForm.styled";
 
 const convertToNumber = (value) => value && Number(value);
 
@@ -12,94 +13,94 @@ let DishForm = (props) => {
 	return (
 		<>
 			<form onSubmit={handleSubmit(postDish)}>
-				<div>
-					<label htmlFor="name">Dish name:</label>
-					<Field
+				<Inputbox>
+					<Input
 						name="name"
 						component="input"
 						type="text"
-						placeholder="Write your dish name"
+						placeholder=" "
 						required
 					/>
-				</div>
-				<div>
-					<label htmlFor="preparation_time">Preparation time:</label>
-					<Field
+					<Span htmlFor="name">Dish name:</Span>
+				</Inputbox>
+				<Inputbox>
+					<Input
 						name="preparation_time"
 						component="input"
 						type="time"
 						step="1"
 						required
 					/>
-				</div>
-				<div>
-					<label htmlFor="type">Dish type:</label>
-					<Field name="type" component="select" required>
+					<Span htmlFor="preparation_time">Preparation time:</Span>
+				</Inputbox>
+				<Inputbox>
+					<Input name="type" component="select" required>
 						<option />
 						<option value="pizza">Pizza</option>
 						<option value="soup">Soup</option>
 						<option value="sandwich">Sandwich</option>
-					</Field>
-				</div>
+					</Input>
+					<Span htmlFor="type">Dish type:</Span>
+				</Inputbox>
 				{typeValue === "pizza" && (
 					<div>
-						<div>
-							<label htmlFor="no_of_slices">Number of slices:</label>
-							<Field
+						<Inputbox>
+							<Input
 								name="no_of_slices"
 								component="input"
 								type="number"
-								placeholder="Choose number of slices"
-								min="0"
+								placeholder=" "
+								min="1"
 								max="12"
 								normalize={convertToNumber}
 								required
 							/>
-						</div>
-						<div>
-							<label htmlFor="diameter">Diameter:</label>
-							<Field
+							<Span htmlFor="no_of_slices">Number of slices:</Span>
+						</Inputbox>
+						<Inputbox>
+							<Input
 								name="diameter"
 								component="input"
 								type="number"
-								placeholder="Choose size"
+								placeholder=" "
 								min="14"
 								max="42"
 								step="0.1"
 								normalize={convertToNumber}
 								required
 							/>
-						</div>
+							<Span htmlFor="diameter">Diameter:</Span>
+						</Inputbox>
 					</div>
 				)}
 				{typeValue === "soup" && (
-					<div>
-						<label htmlFor="spiciness_scale">Spiciness scale:</label>
-						<Field
+					<Inputbox>
+						<Input
 							name="spiciness_scale"
 							component="input"
 							type="number"
-							placeholder="Choose level of spiciness"
-							min="0"
+							placeholder=" "
+							min="1"
 							max="10"
 							normalize={convertToNumber}
 							required
 						/>
-					</div>
+						<Span htmlFor="spiciness_scale">Spiciness scale:</Span>
+					</Inputbox>
 				)}
 				{typeValue === "sandwich" && (
-					<div>
-						<label htmlFor="slices_of_bread">Slices of bread:</label>
-						<Field
+					<Inputbox>
+						<Input
 							name="slices_of_bread"
 							component="input"
 							type="number"
-							placeholder="Choose how many slices of bread"
-							min="0"
+							placeholder=" "
+							min="1"
 							normalize={convertToNumber}
 							required
 						/>
-					</div>
+						<Span htmlFor="slices_of_bread">Slices of bread:</Span>
+					</Inputbox>
 				)}
 				<FormButtons submitting={submitting} dirty={dirty} reset={reset} />
 			</form>
@@ -119,12 +120,7 @@ DishForm = connect((state) => {
 export default reduxForm({
 	form: `DishForm`,
 	initialValues: {
-		name: "",
-		type: "",
-		preparation_time: "00:15:00",
-		no_of_slices: 4,
-		diameter: 14,
-		spiciness_scale: 5,
-		slices_of_bread: 2,
+		preparation_time: "00:00:00",
+		type: "pizza",
 	},
 })(DishForm);
